@@ -2,23 +2,57 @@
 declare(strict_types=1);
 namespace LensenTest\BaseErp;
 
-use Lensen\BaseErp\Facade\OrderFacade;
 use Lensen\BaseErp\Facade\AuthFacade;
+use Lensen\BaseErp\Facade\OrderFacade;
 
 class OrderTest extends Base
 {
     public function testGetOrders()
     {
-        // 设置 API Token（在 Baselinker 面板 "Account & other -> My account -> API section" 生成）
-//         AuthFacade::setAuth('xxx');
+        // 从 .env 读取 BASE_ERP_TOKEN
+        AuthFacade::setAuth();
 
-        // 测试获取订单列表功能
         $params = [
-            'date_from' => strtotime('-1 day'), // Unix 时间戳
+            'date_from' => strtotime('-1 day'),
             'date_to'   => time(),
         ];
         $response = OrderFacade::getOrders($params);
 
         $this->assertNotEmpty($response);
+    }
+
+    public function testGetJournalList()
+    {
+        AuthFacade::setAuth();
+
+        $params = [
+            'last_log_id' => 0,
+            'logs_types'  => [],
+        ];
+        $response = OrderFacade::getJournalList($params);
+
+        $this->assertNotEmpty($response);
+    }
+
+    public function testGetOrderReturns()
+    {
+        AuthFacade::setAuth();
+
+        $params = [
+            'date_from' => strtotime('-7 day'),
+            'date_to'   => time(),
+        ];
+        $response = OrderFacade::getOrderReturns($params);
+
+        $this->assertNotEmpty($response);
+    }
+
+    public function testGetOrderSources()
+    {
+        AuthFacade::setAuth();
+
+        $sources = OrderFacade::getOrderSources();
+
+        $this->assertNotEmpty($sources);
     }
 }

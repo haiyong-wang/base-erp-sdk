@@ -11,7 +11,7 @@ use Lensen\BaseErp\Constants\BaseErpEnum;
 use Lensen\BaseErp\Contract\AuthInterface;
 
 /**
- * @method static array setAuth(string $accessToken, string $channel = BaseErpEnum::CHANNEL_API)
+ * @method static string setAuth(string $accessToken = '', string $channel = BaseErpEnum::CHANNEL_API, string $envKey = 'BASE_ERP_TOKEN')
  */
 class AuthFacade extends Facade
 {

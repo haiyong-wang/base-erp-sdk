@@ -14,8 +14,9 @@ class ConfigRegister
     {
         return [
             'dependencies' => [
-                Contract\AuthInterface::class  => Services\AuthService::class,
-                Contract\OrderInterface::class => Services\OrderService::class,
+                Contract\AuthInterface::class    => Services\AuthService::class,
+                Contract\OrderInterface::class   => Services\OrderService::class,
+                Contract\ShippingInterface::class => Services\ShippingService::class,
             ],
 
             'base_erp' => [
