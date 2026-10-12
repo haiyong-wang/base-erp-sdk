@@ -28,7 +28,7 @@ class AuthMiddleware
             $accessToken  = $this->config['extra']['access_token'] ?? '';
 
             // BaseLinker 推荐通过请求头 X-BL-Token 传递 API Token
-            $request = $request->withHeader('X-BL-Token', $accessToken);
+            $request = $request->withHeader('X-BLToken', $accessToken);
 
             return $handler($request, $options);
         };

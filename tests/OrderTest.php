@@ -10,7 +10,7 @@ class OrderTest extends Base
     public function testGetOrders()
     {
         // 设置 API Token（在 Baselinker 面板 "Account & other -> My account -> API section" 生成）
-        // AuthFacade::setAuth('your-api-token');
+//         AuthFacade::setAuth('xxx');
 
         // 测试获取订单列表功能
         $params = [

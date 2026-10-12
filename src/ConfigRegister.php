@@ -34,7 +34,7 @@ class ConfigRegister
                         'timeout'         => 20,
                         'handler'         => [
                             AuthMiddleware::class,
-                            // LogMiddleware::class,
+//                             LogMiddleware::class,
                         ],
                         'extra'           => [],
                         'proxy'           => [
