@@ -12,4 +12,6 @@ interface OrderInterface
     public function getOrderReturns(array $params, array $header = []);
 
     public function getOrderSources(array $params = [], array $header = []);
+
+    public function getOrderStatusList(array $params = [], array $header = []);
 }

@@ -14,6 +14,7 @@ use Lensen\BaseErp\Contract\OrderInterface;
  * @method static array getJournalList(array $params, array $header = [])
  * @method static array getOrderReturns(array $params, array $header = [])
  * @method static array getOrderSources(array $params = [], array $header = [])
+ * @method static array getOrderStatusList(array $params = [], array $header = [])
  */
 class OrderFacade extends Facade
 {

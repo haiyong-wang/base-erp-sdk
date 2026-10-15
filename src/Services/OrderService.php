@@ -77,6 +77,18 @@ class OrderService extends BaseService implements OrderInterface
     }
 
     /**
+     * 获取订单状态列表
+     * @param array $params 无业务参数
+     * @param array $header
+     * @return array statuses 每项包含 id/name/color/group_id/is_primary/name_for_customer
+     */
+    public function getOrderStatusList(array $params = [], array $header = []): array
+    {
+        $response = $this->request('getOrderStatusList', $params, $header);
+        return $response['statuses'] ?? [];
+    }
+
+    /**
      * 通用请求方法：POST 表单到 /connector.php
      */
     private function request(string $method, array $params, array $header = []): array

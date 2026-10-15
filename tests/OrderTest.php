@@ -55,4 +55,13 @@ class OrderTest extends Base
 
         $this->assertNotEmpty($sources);
     }
+
+    public function testGetOrderStatusList()
+    {
+        AuthFacade::setAuth();
+
+        $statuses = OrderFacade::getOrderStatusList();
+
+        $this->assertNotEmpty($statuses);
+    }
 }
